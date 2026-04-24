@@ -1,6 +1,6 @@
 ---
-layout: home
-title: Home
+layout: page
+title: Gallery
 ---
 # About Me
 
