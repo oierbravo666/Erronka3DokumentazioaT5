@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gure Jatetxea - Restaurante</title>
+    <style>
+        /* Estilos Generales - Diseño Elegante y Moderno */
+        :root {
+            --primary: #c2a05d; /* Dorado elegante */
+            --dark: #121212; /* Fondo oscuro */
+            --light: #f4f4f4; /* Texto claro */
+            --gray: #222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--primary);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .lang-switch {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .lang-switch:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        /* Hero Section (Portada) */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        /* Botón de Reservar */
+        .btn {
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #e0bb70;
+            transform: scale(1.05);
+        }
+
+        /* Secciones Principales */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 4rem 2rem;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Grid de la Carta */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: var(--gray);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .menu-item:hover {
+            border-color: var(--primary);
+        }
+
+        .menu-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-info {
+            padding: 1.5rem;
+        }
+
+        .menu-title-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-title {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .menu-price {
+            font-weight: bold;
+        }
+
+        .menu-desc {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Contacto e Información */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .info-card {
+            background: var(--gray);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .info-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .info-card a {
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        .info-card a:hover {
+            color: var(--primary);
+        }
+
+        footer {
+            background: #090909;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #222;
+        }
+
+        /* Adaptación para pantallas móviles */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            header { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabecera -->
+    <header>
+        <a href="#" class="logo">GURE JATETXEA</a>
+        <!-- Botón para alternar idiomas -->
+        <button class="lang-switch" onclick="toggleLanguage()">ES / EU</button>
+    </header>
+
+    <!-- Sección de Portada -->
+    <section class="hero">
+        <h1 id="hero-title">Ongi etorri</h1>
+        <p id="hero-desc">Bizi ezazu gure lurraren zaporea esperientzia gastronomiko paregabe batean.</p>
+        <a href="tel:+34944123456" class="btn" id="btn-call">Deitu eta Erreserbatu</a>
+    </section>
+
+    <!-- Sección de la Carta / Menú -->
+    <section class="container">
+        <h2 id="menu-heading">Gure Karta</h2>
+        <div class="menu-grid">
+            
+            <!-- Plato 1 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=500&q=80" alt="Plato" class="menu-img">
+                <div class="menu-info">
+                    <div class="menu-title-price">
+                        <span class="menu-title" id="p1-title">Txuleta Labean</span>
+                        <span class="menu-price">22,00€</span>
+                    </div>
+                    <p class="menu-desc" id="p1-desc">Bertako txuleta bikaina, euskal erara erretako patata eta piperrekin.</p>
+                </div>
+            </div>
+
+            <!-- Plato 2 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=80" alt="Plato" class="menu-img">
+                <div class="menu-info">
+                    <div class="menu-title-price">
+                        <span class="menu-title" id="p2-title">Legatza Koxkera eran</span>
+                        <span class="menu-price">18,50€</span>
+                    </div>
+                    <p class="menu-desc" id="p2-desc">Legatz freskoa, itsaski, ilar eta saltsa berde zoragarriarekin lagunduta.</p>
+                </div>
+            </div>
+
+            <!-- Plato 3 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=500&q=80" alt="Plato" class="menu-img">
+                <div class="menu-info">
+                    <div class="menu-title-price">
+                        <span class="menu-title" id="p3-title">Pantxineta Tradizionala</span>
+                        <span class="menu-price">6,00€</span>
+                    </div>
+                    <p class="menu-desc" id="p3-desc">Hostore finezko postre klasikoa, kremaz betea eta almendra txikituz estalia.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección de Ubicación y Horarios -->
+    <section class="container" style="background-color: #181818; border-radius: 12px;">
+        <h2 id="info-heading">Informazioa</h2>
+        <div class="contact-info">
+            
+            <!-- Horario -->
+            <div class="info-card">
+                <h3 id="schedule-title">Ordutegia</h3>
+                <p id="schedule-days">Asteartetik Igandera</p>
+                <p>13:00 - 16:00 | 20:00 - 23:30</p>
+                <p id="schedule-close" style="color: var(--primary); margin-top: 10px;">Astelehenetan itxita</p>
+            </div>
+
+            <!-- Contacto y Reservas -->
+            <div class="info-card">
+                <h3 id="contact-title">Erreserbak</h3>
+                <p>📞 <a href="tel:+34944123456">944 12 34 56</a></p>
+                <p>✉️ <a href="mailto:info@gurejatetxea.eus">info@gurejatetxea.eus</a></p>
+            </div>
+
+            <!-- Dirección -->
+            <div class="info-card">
+                <h3 id="location-title">Kokapena</h3>
+                <p>Kale Nagusia, 12</p>
+                <p>Bilbo, Bizkaia</p>
+                <p style="margin-top: 10px;"><a href="https://maps.google.com" target="_blank" style="color: var(--primary); font-weight: bold;" id="map-link">📍 Nola iritsi</a></p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2026 Gure Jatetxea .EUS. Eskubide guztiak erreserbatuta.</p>
+    </footer>
+
+    <!-- Script para cambiar de idioma de forma instantánea -->
+    <script>
+        let currentLang = 'eu'; // Idioma inicial por defecto
+
+        const content = {
+            eu: {
+                heroTitle: "Ongi etorri",
+                heroDesc: "Bizi ezazu gure lurraren zaporea esperientzia gastronomiko paregabe batean.",
+                btnCall: "Deitu eta Erreserbatu",
+                menuHeading: "Gure Karta",
+                p1Title: "Txuleta Labean",
+                p1Desc: "Bertako txuleta bikaina, euskal erara erretako patata eta piperrekin.",
+                p2Title: "Legatza Koxkera eran",
+                p2Desc: "Legatz freskoa, itsaski, ilar eta saltsa berde zoragarriarekin lagunduta.",
+                p3Title: "Pantxineta Tradizionala",
+                p3Desc: "Hostore finezko postre klasikoa, kremaz betea eta almendra txikituz estalia.",
+                infoHeading: "Informazioa",
+                scheduleTitle: "Ordutegia",
+                scheduleDays: "Asteartetik Igandera",
+                scheduleClose: "Astelehenetan itxita",
+                contactTitle: "Erreserbak",
+                locationTitle: "Kokapena",
+                mapLink: "📍 Nola iritsi"
+            },
+            es: {
+                heroTitle: "Bienvenidos",
+                heroDesc: "Disfruta del sabor de nuestra tierra en una experiencia gastronómica única.",
+                btnCall: "Llamar y Reservar",
+                menuHeading: "Nuestra Carta",
+                p1Title: "Chuletón al Horno",
+                p1Desc: "Excelente chuleta local, acompañada de patatas y pimientos asados al estilo vasco.",
+                p2Title: "Merluza a la Koskera",
+                p2Desc: "Merluza fresca acompañada de marisco, guisantes y una deliciosa salsa verde.",
+                p3Title: "Pantxineta Tradicional",
+                p3Desc: "Postre clásico de hojaldre fino, relleno de crema pastelera y almendra picada.",
+                infoHeading: "Información",
+                scheduleTitle: "Horario",
+                scheduleDays: "De Martes a Domingo",
+                scheduleClose: "Lunes cerrado",
+                contactTitle: "Reservas",
+                locationTitle: "Ubicación",
+                mapLink: "📍 Cómo llegar"
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'eu' ? 'es' : 'eu';
+            
+            document.getElementById('hero-title').textContent = content[currentLang].heroTitle;
+            document.getElementById('hero-desc').textContent = content[currentLang].heroDesc;
+            document.getElementById('btn-call').textContent = content[currentLang].btnCall;
+            document.getElementById('menu-heading').textContent = content[currentLang].menuHeading;
+            document.getElementById('p1-title').textContent = content[currentLang].p1Title;
+            document.getElementById('p1-desc').textContent = content[currentLang].p1Desc;
+            document.getElementById('p2-title').textContent = content[currentLang].p2Title;
+            document.getElementById('p2-desc').textContent = content[currentLang].p2Desc;
+            document.getElementById('p3-title').textContent = content[currentLang].p3Title;
+            document.getElementById('p3-desc').textContent = content[currentLang].p3Desc;
+            document.getElementById('info-heading').textContent = content[currentLang].infoHeading;
+            document.getElementById('schedule-title').textContent = content[currentLang].scheduleTitle;
+            document.getElementById('schedule-days').textContent = content[currentLang].scheduleDays;
+            document.getElementById('schedule-close').textContent = content[currentLang].scheduleClose;
+            document.getElementById('contact-title').textContent = content[currentLang].contactTitle;
+            document.getElementById('location-title').textContent = content[currentLang].locationTitle;
+            document.getElementById('map-link').textContent = content[currentLang].mapLink;
+        }
+    </script>
+</body>
+</html>
