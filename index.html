@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gure Jatetxea - Restaurante</title>
+    <title>Larramendi Torrea Jatetxea</title>
     <style>
         /* Estilos Generales - Diseño Elegante y Moderno */
         :root {
@@ -39,10 +39,11 @@
         }
 
         .logo {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: bold;
             color: var(--primary);
             text-decoration: none;
+            letter-spacing: 1px;
         }
 
         .lang-switch {
@@ -218,19 +219,18 @@
 
     <!-- Cabecera -->
     <header>
-        <a href="#" class="logo">GURE JATETXEA</a>
-        <!-- Botón para alternar idiomas -->
+        <a href="#" class="logo">LARRAMENDI TORREA JATETXEA</a>
         <button class="lang-switch" onclick="toggleLanguage()">ES / EU</button>
     </header>
 
-    <!-- Sección de Portada -->
+    <!-- Portada -->
     <section class="hero">
         <h1 id="hero-title">Ongi etorri</h1>
-        <p id="hero-desc">Bizi ezazu gure lurraren zaporea esperientzia gastronomiko paregabe batean.</p>
-        <a href="tel:+34944123456" class="btn" id="btn-call">Deitu eta Erreserbatu</a>
+        <p id="hero-desc">Bizi ezazu gure lurraren zaporea eta euskal sukaldaritza tradizionala ingurune historiko eta paregabe batean.</p>
+        <a href="tel:+34943851147" class="btn" id="btn-call">Deitu eta Erreserbatu</a>
     </section>
 
-    <!-- Sección de la Carta / Menú -->
+    <!-- Carta / Menú -->
     <section class="container">
         <h2 id="menu-heading">Gure Karta</h2>
         <div class="menu-grid">
@@ -241,7 +241,7 @@
                 <div class="menu-info">
                     <div class="menu-title-price">
                         <span class="menu-title" id="p1-title">Txuleta Labean</span>
-                        <span class="menu-price">22,00€</span>
+                        <span class="menu-price">24,00€</span>
                     </div>
                     <p class="menu-desc" id="p1-desc">Bertako txuleta bikaina, euskal erara erretako patata eta piperrekin.</p>
                 </div>
@@ -253,7 +253,7 @@
                 <div class="menu-info">
                     <div class="menu-title-price">
                         <span class="menu-title" id="p2-title">Legatza Koxkera eran</span>
-                        <span class="menu-price">18,50€</span>
+                        <span class="menu-price">19,50€</span>
                     </div>
                     <p class="menu-desc" id="p2-desc">Legatz freskoa, itsaski, ilar eta saltsa berde zoragarriarekin lagunduta.</p>
                 </div>
@@ -265,7 +265,7 @@
                 <div class="menu-info">
                     <div class="menu-title-price">
                         <span class="menu-title" id="p3-title">Pantxineta Tradizionala</span>
-                        <span class="menu-price">6,00€</span>
+                        <span class="menu-price">6,50€</span>
                     </div>
                     <p class="menu-desc" id="p3-desc">Hostore finezko postre klasikoa, kremaz betea eta almendra txikituz estalia.</p>
                 </div>
@@ -274,7 +274,7 @@
         </div>
     </section>
 
-    <!-- Sección de Ubicación y Horarios -->
+    <!-- Datos, Horarios y Ubicación Real -->
     <section class="container" style="background-color: #181818; border-radius: 12px;">
         <h2 id="info-heading">Informazioa</h2>
         <div class="contact-info">
@@ -283,23 +283,25 @@
             <div class="info-card">
                 <h3 id="schedule-title">Ordutegia</h3>
                 <p id="schedule-days">Asteartetik Igandera</p>
-                <p>13:00 - 16:00 | 20:00 - 23:30</p>
+                <p>13:00 - 16:00 | 20:00 - 23:00</p>
                 <p id="schedule-close" style="color: var(--primary); margin-top: 10px;">Astelehenetan itxita</p>
             </div>
 
             <!-- Contacto y Reservas -->
             <div class="info-card">
                 <h3 id="contact-title">Erreserbak</h3>
-                <p>📞 <a href="tel:+34944123456">944 12 34 56</a></p>
-                <p>✉️ <a href="mailto:info@gurejatetxea.eus">info@gurejatetxea.eus</a></p>
+                <p>📞 <a href="tel:+34943851147">943 85 11 47</a></p>
+                <p>✉️ <a href="mailto:info@larramenditorrea.eus">info@larramenditorrea.eus</a></p>
             </div>
 
-            <!-- Dirección -->
+            <!-- Dirección Real del enlace de Maps -->
             <div class="info-card">
                 <h3 id="location-title">Kokapena</h3>
-                <p>Kale Nagusia, 12</p>
-                <p>Bilbo, Bizkaia</p>
-                <p style="margin-top: 10px;"><a href="https://maps.google.com" target="_blank" style="color: var(--primary); font-weight: bold;" id="map-link">📍 Nola iritsi</a></p>
+                <p>Bizkaia Kalea, z/g</p>
+                <p>20720 Azkoitia, Gipuzkoa</p>
+                <p style="margin-top: 10px;">
+                    <a href="https://maps.app.goo.gl/P3wN55866bUor7eE8" target="_blank" style="color: var(--primary); font-weight: bold;" id="map-link">📍 Nola iritsi (Google Maps)</a>
+                </p>
             </div>
 
         </div>
@@ -307,17 +309,17 @@
 
     <!-- Pie de página -->
     <footer>
-        <p>© 2026 Gure Jatetxea .EUS. Eskubide guztiak erreserbatuta.</p>
+        <p>© 2026 Larramendi Torrea Jatetxea .EUS. Eskubide guztiak erreserbatuta.</p>
     </footer>
 
-    <!-- Script para cambiar de idioma de forma instantánea -->
+    <!-- Script de Idiomas (Euskera / Castellano) -->
     <script>
-        let currentLang = 'eu'; // Idioma inicial por defecto
+        let currentLang = 'eu';
 
         const content = {
             eu: {
                 heroTitle: "Ongi etorri",
-                heroDesc: "Bizi ezazu gure lurraren zaporea esperientzia gastronomiko paregabe batean.",
+                heroDesc: "Bizi ezazu gure lurraren zaporea eta euskal sukaldaritza tradizionala ingurune historiko eta paregabe batean.",
                 btnCall: "Deitu eta Erreserbatu",
                 menuHeading: "Gure Karta",
                 p1Title: "Txuleta Labean",
@@ -332,11 +334,11 @@
                 scheduleClose: "Astelehenetan itxita",
                 contactTitle: "Erreserbak",
                 locationTitle: "Kokapena",
-                mapLink: "📍 Nola iritsi"
+                mapLink: "📍 Nola iritsi (Google Maps)"
             },
             es: {
                 heroTitle: "Bienvenidos",
-                heroDesc: "Disfruta del sabor de nuestra tierra en una experiencia gastronómica única.",
+                heroDesc: "Disfruta del sabor de nuestra tierra y de la cocina tradicional vasca en un entorno histórico y único.",
                 btnCall: "Llamar y Reservar",
                 menuHeading: "Nuestra Carta",
                 p1Title: "Chuletón al Horno",
@@ -351,7 +353,7 @@
                 scheduleClose: "Lunes cerrado",
                 contactTitle: "Reservas",
                 locationTitle: "Ubicación",
-                mapLink: "📍 Cómo llegar"
+                mapLink: "📍 Cómo llegar (Google Maps)"
             }
         };
 
